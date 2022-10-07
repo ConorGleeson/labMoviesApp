@@ -58,12 +58,12 @@ export default {
     ],
     production_countries: [
       {
-        iso_3166_1: "US",
+        iso_3166_1: "Fr",
         //name: "United States of America",
         name: "France",
       },
       {
-        iso_3166_1: "US",
+        iso_3166_1: "Lut",
         //name: "United States of America",
         name: "Lithuania",
       },
