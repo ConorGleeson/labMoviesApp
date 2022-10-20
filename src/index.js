@@ -5,20 +5,22 @@ import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 
-import favouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
+import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
 import SiteHeader from './components/siteHeader'
 import {Link} from 'react-router-dom'
+import UpcomingMovies from "./pages/upcomingMoviesPage";
 
 const App = () => {
   return (
     <BrowserRouter>
       <SiteHeader />      {/* New Header  */} 
       <Routes>
-        <Route exact path="/movies/favourites" element={<favouriteMoviesPage />} />
+        <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
         <Route path="/movies/:id" element={<MoviePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={ <Navigate to="/" /> } />
         <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
+        <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
       </Routes>
     </BrowserRouter>
   );
