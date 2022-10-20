@@ -36,7 +36,7 @@ const MovieHeader = (props) => {
         <Avatar sx={{ backgroundColor: 'red' }}>
           <FavoriteIcon />
         </Avatar>
-      ) : null}
+      ) : null} 
 
 
       <Typography variant="h4" component="h3">
@@ -44,6 +44,7 @@ const MovieHeader = (props) => {
         <a href={movie.homepage}>
           <HomeIcon color="primary" />
         </a>
+
         <br />
         <span sx={{ fontSize: "1.5rem" }}>{`   "${movie.tagline}"`} </span>
       </Typography>
