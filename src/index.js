@@ -16,6 +16,7 @@ import MoviesContextProvider from "./contexts/moviesContext";
 
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
