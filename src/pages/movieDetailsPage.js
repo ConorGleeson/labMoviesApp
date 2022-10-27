@@ -4,9 +4,26 @@ import MovieDetails from "../components/movieDetails/";
 import PageTemplate from "../components/templateMoviePage";
 import useMovie from "../hooks/useMovie";
 
-const MoviePage = (props) => {
+import { getMovie } from '../api/tmdb-api'
+import { useQuery } from "react-query";
+import Spinner from '../components/spinner'
+
+
+const MovieDetailsPage = (props) => {
   const { id } = useParams();
-  const [movie] = useMovie(id);
+
+  const { data: movie, error, isLoading, isError } = useQuery(
+    ["movie", { id: id }],
+    getMovie
+  );
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
 
   return (
     <>
@@ -23,4 +40,4 @@ const MoviePage = (props) => {
   );
 };
 
-export default MoviePage;
+export default MovieDetailsPage;
