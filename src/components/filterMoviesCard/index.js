@@ -50,6 +50,7 @@ const formControl =
       handleChange(e, "genre", e.target.value);
     };
   
+  
 
   return (
     <Card 

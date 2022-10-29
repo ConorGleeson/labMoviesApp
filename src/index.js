@@ -9,8 +9,9 @@ import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
 import SiteHeader from './components/siteHeader'
 import {Link} from 'react-router-dom'
 import UpcomingMovies from "./pages/upcomingMoviesPage";
+
 import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from 'react-query/devtools' 
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import MoviesContextProvider from "./contexts/moviesContext";
 

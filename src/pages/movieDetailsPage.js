@@ -9,6 +9,7 @@ import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
 
+
 const MovieDetailsPage = (props) => {
   const { id } = useParams();
 
