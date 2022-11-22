@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
 import TVShowDetails from "../components/tvShowComponents/tvShowDetails/";
-import PageTemplate from "../components/movieComponents/templateMoviePage";
+import TemplateTVShowPage from "../components/tvShowComponents/templateTVShowPage";
 //import useMovie from "../hooks/useMovie";
 
 import { getTVShow } from '../api/tmdb-api'
@@ -30,9 +30,9 @@ const TVShowDetailsPage = (props) => {
     <>
       {show ? (
         <>
-          <PageTemplate show={show}>
+          <TemplateTVShowPage show={show}>
             <TVShowDetails show={show} />
-          </PageTemplate>
+          </TemplateTVShowPage>
         </>
       ) : (
         <p>Waiting for show details</p>

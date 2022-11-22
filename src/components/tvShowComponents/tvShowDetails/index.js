@@ -57,7 +57,7 @@ const TVShowDetails = ({ show }) => {  // Don't miss this!
           icon={<StarRate />}
           label={`${show.vote_average} (${show.vote_count}`}
         />
-        <Chip label={`Released: ${show.first_aired_date}`} />
+        <Chip label={`First Episode: ${show.first_air_date}`} />
       </Paper>
       <Paper 
         component="ul" 
