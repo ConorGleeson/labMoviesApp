@@ -23,6 +23,9 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 //top rated
 import TopRatedMoviesPage from "./pages/topRatedMoviesPage";
 
+//tvshow//
+import TVShowPage from "./pages/tvShowPage";
+import TVShowDetailsPage from "./pages/tvShowDetailsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +53,8 @@ const App = () => {
         <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
         <Route path="/movies/topRated" element={<TopRatedMoviesPage/>}  />
         <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+        <Route path="/tvshows" element ={<TVShowPage/>} />
+        <Route path="tvshows/:id" element={<TVShowDetailsPage/>}/>
         
       </Routes>
       </MoviesContextProvider>
