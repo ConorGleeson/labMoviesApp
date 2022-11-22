@@ -10,13 +10,14 @@ import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
 import WatchListPage from "./pages/watchListPage";
 
 import SiteHeader from './components/siteHeader'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import UpcomingMovies from "./pages/upcomingMoviesPage";
 
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 import MoviesContextProvider from "./contexts/moviesContext";
+import TVShowProvider from "./contexts/tvShowContext";
 
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 
@@ -26,6 +27,7 @@ import TopRatedMoviesPage from "./pages/topRatedMoviesPage";
 //tvshow//
 import TVShowPage from "./pages/tvShowPage";
 import TVShowDetailsPage from "./pages/tvShowDetailsPage";
+import FavouriteTVShowPage from "./pages/favouriteTVShowsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +45,7 @@ const App = () => {
     <BrowserRouter>
       <SiteHeader />      {/* New Header  */} 
       <MoviesContextProvider>
+        <TVShowProvider>
       <Routes>
         <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
         <Route exact path="/watchList" element={<WatchListPage />} />
@@ -55,8 +58,10 @@ const App = () => {
         <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
         <Route path="/tvshows" element ={<TVShowPage/>} />
         <Route path="/tvshows/:id" element={<TVShowDetailsPage/>}/>
+        <Route path="/tvshows/favourites" element={<FavouriteTVShowPage/>}/>
         
       </Routes>
+      </TVShowProvider>
       </MoviesContextProvider>
     </BrowserRouter>
     <ReactQueryDevtools initialIsOpen={false} />

@@ -20,18 +20,18 @@ import { TVShowContext } from "../../../contexts/tvShowContext";
 
 
 export default function TVShowCard({ show, action }) {
-//   const { favourites, addToFavourites } = useContext(TVShowContext);
+  const { favourites, addToShowFavourites } = useContext(TVShowContext);
  
-//    if (favourites.find((id) => id === show.id)) {
-//      show.favourite = true;
-//    } else {
-//      show.favourite = false
-//    }
+   if (favourites.find((id) => id === show.id)) {
+     show.favourite = true;
+   } else {
+     show.favourite = false
+   }
  
-//    const handleAddToFavourite = (e) => {
-//      e.preventDefault();
-//      addToFavourites(show);
-//    };
+   const handleAddToShowFavourite = (e) => {
+     e.preventDefault();
+     addToShowFavourites(show);
+   };
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -77,7 +77,7 @@ export default function TVShowCard({ show, action }) {
     {action(show)}
     <Link to={`/tvshows/${show.id}`}>
       <Button variant="outlined" size="medium" color="primary">
-        More Info ...
+        Show Detials
       </Button>
     </Link>
   </CardActions>

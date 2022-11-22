@@ -3,7 +3,7 @@ import { getTVShows } from "../api/tmdb-api";
 import TVShowListPageTemplate from '../components/tvShowComponents/templateTVShowListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
+import AddToShowFavouritesIcon from '../components/cardIcons/addToShowFavouritesIcon'
 
 const TVShowPage = (props) => {
 
@@ -20,18 +20,18 @@ const TVShowPage = (props) => {
 
 
   // Redundant, but necessary to avoid app crashing.
-  const favourites = show.filter(m => m.favourite)
-  localStorage.setItem('favourites', JSON.stringify(favourites))
-  const addToFavourites = (showId) => true 
+  // const favourites = show.filter(m => m.favourite)
+  // localStorage.setItem('favourites', JSON.stringify(favourites))
+  // const addToShowFavourites = (showId) => true 
 
   return (
     <TVShowListPageTemplate
       title="Discover shows"
       show={show}
       action={(show) => {
-        return <AddToFavouritesIcon show={show} />
+        return <AddToShowFavouritesIcon show={show} />
       }}
-    />
+    />  ///make a version of favourites icon for tv shows
   );
 };
 export default TVShowPage; 
