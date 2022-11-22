@@ -23,12 +23,12 @@ const TVShowProvider = (props) => {
   // };
 
 
-  // We will use this function in a later section
-  // const removeFromFavourites = (show) => {
-  //   setFavourites( favourites.filter(
-  //     (mId) => mId !== show.id
-  //   ) )
-  // };
+  
+  const removeFromShowFavourites = (show) => {
+    setFavourites( favourites.filter(
+      (mId) => mId !== show.id
+    ) )
+  };
 
  return (
     <TVShowContext.Provider
@@ -37,7 +37,7 @@ const TVShowProvider = (props) => {
         // watchList,
         // addToWatchList,
         addToShowFavourites,
-        // removeFromFavourites,
+        removeFromShowFavourites,
         // addReview,
       }}
     >

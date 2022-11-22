@@ -5,7 +5,7 @@ import { useQueries } from "react-query";
 import { getTVShow } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
 
-import RemoveFromFavourites from "../components/cardIcons/removeFromFavourites";
+import RemoveFromShowFavourites from "../components/cardIcons/removeFromShowFavourites";
 //import WriteReview from "../components/cardIcons/writeReview";
 
 const FavouriteTVShowPage = () => {
@@ -41,7 +41,7 @@ const FavouriteTVShowPage = () => {
       action={(show) => {
         return (
           <>
-            <RemoveFromFavourites show={show} />
+            <RemoveFromShowFavourites show={show} />
            
           </>
         );
