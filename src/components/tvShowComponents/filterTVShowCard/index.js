@@ -90,11 +90,11 @@ const formControl =
           </Select>
         </FormControl>
       </CardContent>
-      <CardMedia
+      {/* <CardMedia
         sx={{ height: 300 }}
-        image={img}
+        // image={img}
         title="Filter"
-      />
+      /> */}
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />

@@ -56,7 +56,7 @@ const formControl =
     <Card 
       sx={{
         maxWidth: 345,
-        backgroundColor: "rgb(204, 204, 0)"
+        backgroundColor: "rgb(255,120, 255)"
       }} 
       variant="outlined">
       <CardContent>
@@ -92,11 +92,11 @@ const formControl =
           </Select>
         </FormControl>
       </CardContent>
-      <CardMedia
+      {/* <CardMedia
         sx={{ height: 300 }}
-        image={img}
+        // image={img}
         title="Filter"
-      />
+      /> */}
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
