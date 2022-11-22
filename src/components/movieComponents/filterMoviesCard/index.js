@@ -9,7 +9,7 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import img from '../../../images/pexels-dziana-hasanbekava-5480827.jpg'
+// import img from '../../../images/pexels-dziana-hasanbekava-5480827.jpg'
 import { getGenres } from "../../../api/tmdb-api";
 
 import { useQuery } from "react-query";
@@ -36,6 +36,8 @@ const formControl =
     if (genres[0].name !== "All"){
       genres.unshift({ id: "0", name: "All" });
     }
+
+    const sorts = [{id:"popularity.asc"}, {id:"popularity.desc"}] //array of options for sort, will add more later. //https://www.themoviedb.org/talk/5339fe0ac3a3680e7f006a90 link where found example of sort aoi call
   
     const handleChange = (e, type, value) => {
       e.preventDefault();
@@ -48,6 +50,11 @@ const formControl =
   
     const handleGenreChange = (e) => {
       handleChange(e, "genre", e.target.value);
+    };
+
+    const handleSortChange = (e) => {
+      handleChange(e, "sort", e.target.value);    
+
     };
   
   
@@ -92,11 +99,25 @@ const formControl =
           </Select>
         </FormControl>
       </CardContent>
-      {/* <CardMedia
-        sx={{ height: 300 }}
-        // image={img}
-        title="Filter"
-      /> */}
+      {/* new copy of filter menu above*/}
+      <FormControl sx={formControl}>
+          <InputLabel id="sort-label">Sort</InputLabel>
+          <Select
+            labelId="sort-label"
+            id="sort-select"
+            value={props.sortMovie}
+            onChange={handleSortChange}>
+             {sorts.map((sort) => {
+              return (
+                <MenuItem key={sort.id} value={sort.id}>
+                  {sort.id}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+      
+     
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
