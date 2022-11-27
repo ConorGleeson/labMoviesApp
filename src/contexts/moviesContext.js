@@ -1,3 +1,4 @@
+import { number } from "prop-types";
 import React, { useState } from "react";
 
 export const MoviesContext = React.createContext(null);
@@ -6,6 +7,14 @@ const MoviesContextProvider = (props) => {
   const [myReviews, setMyReviews] = useState( {} ) 
   const [favourites, setFavourites] = useState( [] )
   const [watchList, setWatchList] = useState( [] )
+
+  //pagination
+  const [pageNumber, setPageNumber] = useState([])
+  
+  const setPageNum = (number) =>
+{
+  setPageNumber(number)
+}
   
 
   const addToFavourites = (movie) => {
@@ -46,6 +55,9 @@ const MoviesContextProvider = (props) => {
         addToFavourites,
         removeFromFavourites,
         addReview,
+        //paginaiton
+        pageNumber,
+        setPageNum
       }}
     >
       {props.children}
