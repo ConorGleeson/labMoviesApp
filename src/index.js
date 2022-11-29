@@ -29,6 +29,9 @@ import TVShowPage from "./pages/tvShowPage";
 import TVShowDetailsPage from "./pages/tvShowDetailsPage";
 import FavouriteTVShowPage from "./pages/favouriteTVShowsPage";
 
+//login
+import LoginPage from "./pages/userLoginPage";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -59,6 +62,7 @@ const App = () => {
         <Route path="/tvshows" element ={<TVShowPage/>} />
         <Route path="/tvshows/:id" element={<TVShowDetailsPage/>}/>
         <Route path="/tvshows/favourites" element={<FavouriteTVShowPage/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
         
       </Routes>
       </TVShowProvider>

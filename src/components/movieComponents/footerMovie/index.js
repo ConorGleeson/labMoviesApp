@@ -7,6 +7,9 @@ import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+
 //pagination
 import Pagination from '@mui/material/Pagination';
 import { MoviesContext } from "../../../contexts/moviesContext";
@@ -35,13 +38,13 @@ const {pageNumber} = useContext(MoviesContext)
         }}
       >
       <IconButton aria-label="go back" onClick={() => setPageNum(-1)} >
-        <ArrowBackIcon color="primary" fontSize="large" />
+        <ArrowLeftIcon color="primary" fontSize="large" />
       </IconButton>
       
 
 
       <IconButton aria-label="go forward" onClick={() => setPageNum(+1) } >
-        <ArrowForwardIcon color="primary" fontSize="large" />
+        <ArrowRightIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>
   );

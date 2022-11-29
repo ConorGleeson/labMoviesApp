@@ -9,7 +9,7 @@ export const getMovies = (args) => {
   const {pageNum} = pageNumPart; 
   console.log(pageNum)
   return fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=${sortMovieBy}&include_adult=false&include_video=false&page=${pageNum}`
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=${sortMovieBy}&include_adult=true&include_video=false&page=${pageNum}`
   ).then((response) => {
     if (!response.ok) {
       throw new Error(response.json().message);
