@@ -14,8 +14,9 @@ const HomePage = (props) => {
  
   const {setPageNum} = useContext(MoviesContext);
   const {pageNum} = useParams();
-  const {  data, error, isLoading, isError }  = useQuery('discover-${pageNumber}', {pageNumber:pageNum},  getMovies)
+  const {  data, error, isLoading, isError }  = useQuery(['discover', {pageNum:pageNum}],  getMovies)
   setPageNum(pageNum)
+  
 
 
   if (isLoading) {

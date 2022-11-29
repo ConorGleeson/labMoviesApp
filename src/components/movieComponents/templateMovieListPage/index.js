@@ -19,6 +19,7 @@ function MovieListPageTemplate({ movies, title, action }) {
   const [sortMovie, setSortMovie] = useState(""); //based off above
   const genreId = Number(genreFilter);
   const {pageNumber} = useState(MoviesContext)
+ 
 
   let displayedMovies = movies
     .filter((m) => {

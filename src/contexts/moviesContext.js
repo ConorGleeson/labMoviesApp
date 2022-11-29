@@ -1,4 +1,4 @@
-import { number } from "prop-types";
+
 import React, { useState } from "react";
 
 export const MoviesContext = React.createContext(null);
@@ -11,9 +11,10 @@ const MoviesContextProvider = (props) => {
   //pagination
   const [pageNumber, setPageNumber] = useState([])
   
-  const setPageNum = (number) =>
+  const setPageNum = (num) =>
 {
-  setPageNumber(number)
+  setPageNumber(num)
+  //console.log(number)//undefined why???????????????
 }
   
 

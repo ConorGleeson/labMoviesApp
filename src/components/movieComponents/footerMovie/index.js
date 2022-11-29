@@ -12,14 +12,17 @@ import Pagination from '@mui/material/Pagination';
 import { MoviesContext } from "../../../contexts/moviesContext";
 
 const MovieFooter = (props) => {
-const {pageNum} = useContext(MoviesContext)
+const {pageNumber} = useContext(MoviesContext)
   const navigate = useNavigate();
 
-  const setPageNumber = (pageNumber) =>{
-    const num = parseInt(pageNumber) + parseInt(pageNum)
-    if(num < 0 ) return; 
+  const setPageNum = (newNumber) =>{
+    const num = parseInt(pageNumber) + parseInt(newNumber)
+     if(num <= 0 ) return; 
+
+    // console.log(`--${pageNumber} + ${pageNum}`)
+    navigate(`/${num}`, {replace:true})
   }
-navigate('${new}', {replace: true});
+
   return (
     <Paper 
         component="div" 
@@ -31,12 +34,13 @@ navigate('${new}', {replace: true});
             margin: 0,
         }}
       >
-      <IconButton aria-label="go back" onClick={() => navigate(-1)} >
+      <IconButton aria-label="go back" onClick={() => setPageNum(-1)} >
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
+      
 
 
-      <IconButton aria-label="go forward" onClick={() => navigate(+1) } >
+      <IconButton aria-label="go forward" onClick={() => setPageNum(+1) } >
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>
