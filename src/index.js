@@ -29,8 +29,14 @@ import TVShowPage from "./pages/tvShowPage";
 import TVShowDetailsPage from "./pages/tvShowDetailsPage";
 import FavouriteTVShowPage from "./pages/favouriteTVShowsPage";
 
+//firebase
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 //login
 import LoginPage from "./pages/userLoginPage";
+
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,18 +49,32 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+ 
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    onAuthStateChanged(getAuth(), (currentUser) => {
+      setUser(currentUser);
+    })});
+
   return (
+    
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <SiteHeader />      {/* New Header  */} 
+    {user != null ? (
+      <>
+      <SiteHeader />      
       <MoviesContextProvider>
         <TVShowProvider>
+          
       <Routes>
+      <Route path="*" element={ <Navigate to="/login" /> } />
+      <Route path="/login" element={<LoginPage/>}/>
+
         <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
         <Route exact path="/watchList" element={<WatchListPage />} />
         <Route path="/movies/:id" element={<MoviePage />} />
         <Route path="/:pageNum" element={<HomePage />} />
-        <Route path="*" element={ <Navigate to="/login" /> } />
+        
         <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
         <Route path="/movies/upcoming" element={<UpcomingMovies/>}  />
         <Route path="/movies/topRated" element={<TopRatedMoviesPage/>}  />
@@ -62,12 +82,21 @@ const App = () => {
         <Route path="/tvshows" element ={<TVShowPage/>} />
         <Route path="/tvshows/:id" element={<TVShowDetailsPage/>}/>
         <Route path="/tvshows/favourites" element={<FavouriteTVShowPage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
+        
         
       </Routes>
       </TVShowProvider>
       </MoviesContextProvider>
-    </BrowserRouter>
+     </> ):( <>
+      {/* only routes avalible when not logged in */}
+      <Routes>
+      <Route path="*" element={ <Navigate to="/login" /> } />
+      <Route path="/login" element={<LoginPage/>}/>
+      </Routes> </>)
+  }
+  
+   </BrowserRouter>
+    
     <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
