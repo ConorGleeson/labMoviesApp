@@ -65,7 +65,7 @@ function LoginPage(){
                 </Typography>
                 <Typography align="center">
                 <TextField id="outlined-basic" label="Email" varient = "outlined"  onChange={(event) => { setRegisterEmail(event.target.value) }}/>
-                <TextField id="outlined-basic" label="Password" varient = "outlined" onChange={(event) => { setRegisterPassword(event.target.value) }}/>
+                <TextField type="password" id="outlined-basic" label="Password" varient = "outlined" onChange={(event) => { setRegisterPassword(event.target.value) }}/>
                 </Typography>
                 <Typography  style = {{padding: 20}}  align="center">
                 <Button variant="contained"  color="success" endIcon={<CreateIcon />} onClick={register}>Create User</Button>
@@ -78,7 +78,7 @@ function LoginPage(){
                 </Typography>
                 <Typography align="center">
                 <TextField id="outlined-basic" label="Email" varient = "outlined" onChange={(event) => { setLoginEmail(event.target.value) }}/>
-                <TextField id="outlined-basic" label="Password" varient = "outlined" onChange={(event) => { setLoginPassword(event.target.value) }}/>
+                <TextField type="password" id="outlined-basic" label="Password" varient = "outlined" onChange={(event) => { setLoginPassword(event.target.value) }}/>
                 </Typography>
                 <Typography  style = {{padding: 20}}  align="center">
                 <Button variant="contained" color="success" endIcon={<LoginIcon />} onClick={login}>Login</Button>
