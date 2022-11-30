@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import CreateIcon from '@mui/icons-material/Create';
+import Alert from '@mui/material/Alert';
 
 import TextField from '@mui/material/TextField';
 
@@ -20,6 +21,10 @@ function LoginPage(){
 
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+
+    //error
+    const[error, setError]= useState("");
+    
 
 
     const [user, setUser] = useState({});
@@ -39,6 +44,7 @@ function LoginPage(){
       const user =  await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
       //console.log(user)
         }catch(error){
+            setError(error.message)
             console.log(error.message)
         }
     };
@@ -48,6 +54,7 @@ function LoginPage(){
             const user =  await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             //console.log(user)
               }catch(error){
+                setError(error.message)
                   console.log(error.message)
               }
 
@@ -85,6 +92,15 @@ function LoginPage(){
                 </Typography>
             </div>
             <div>
+            <Typography   align="center">
+            {error ? 
+                    <Alert severity="error">
+                         {error} 
+                    </Alert>
+                    : null}
+        
+            
+                </Typography>
             <Typography align="center" variant="h4" sx={{ flexGrow: 1 }}>
                 User:
                 </Typography>
@@ -96,9 +112,11 @@ function LoginPage(){
             <Typography  style = {{padding: 20}}  align="center">
                 <Button  variant="contained" color="error" endIcon={<LogoutIcon />} onClick={logout}>Sign Out</Button>
                 </Typography>
+                
+
             </div>
         </div>
-    )
+    )   
 
 
     
