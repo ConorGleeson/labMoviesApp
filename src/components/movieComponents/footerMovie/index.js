@@ -12,14 +12,15 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 //pagination
 import Pagination from '@mui/material/Pagination';
-import { MoviesContext } from "../../../contexts/moviesContext";
+//import { MoviesContext } from "../../../contexts/moviesContext";
 
 const MovieFooter = (props) => {
-const {pageNumber} = useContext(MoviesContext)
+//const {pageNumber} = useContext(MoviesContext)
   const navigate = useNavigate();
 
   const setPageNum = (newNumber) =>{
-    const num = parseInt(pageNumber) + parseInt(newNumber)
+    // const num = parseInt(pageNumber) + parseInt(newNumber)
+    const num = parseInt(newNumber)
      if(num <= 0 ) return; 
 
     // console.log(`--${pageNumber} + ${pageNum}`)
@@ -37,15 +38,15 @@ const {pageNumber} = useContext(MoviesContext)
             margin: 0,
         }}
       >
-      <IconButton aria-label="go back" onClick={() => setPageNum(-1)} >
+      {/* <IconButton aria-label="go back" onClick={() => setPageNum(-1)} >
         <ArrowLeftIcon color="primary" fontSize="large" />
       </IconButton>
       
-
-
       <IconButton aria-label="go forward" onClick={() => setPageNum(+1) } >
         <ArrowRightIcon color="primary" fontSize="large" />
-      </IconButton>
+      </IconButton> */}
+
+      <Pagination count={1000} variant="outlined" onChange={(event, page) => setPageNum(page)}></Pagination>
     </Paper>
   );
 };

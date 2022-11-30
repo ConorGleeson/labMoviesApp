@@ -56,7 +56,7 @@ function MovieListPageTemplate({ movies, title, action }) {
         <MovieList action={action} movies={displayedMovies}></MovieList>
       </Grid>
       {/* pagination grid */}
-      <Grid  item xs = {5} style = {{paddingTop: 20}}>
+      <Grid   item xs = {5} style = {{paddingTop: 20}}>
         <Box display = "flex"
         justifyContent = "left"
         alignItems = "center"
