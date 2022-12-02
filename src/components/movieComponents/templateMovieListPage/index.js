@@ -40,6 +40,7 @@ function MovieListPageTemplate({ movies, title, action }) {
   };
 
   return (
+    <>
     <Grid container sx={{ padding: '20px' }}>
       <Grid item xs={12}>
         <Header title={title} />
@@ -56,15 +57,18 @@ function MovieListPageTemplate({ movies, title, action }) {
         <MovieList action={action} movies={displayedMovies}></MovieList>
       </Grid>
       {/* pagination grid */}
-      <Grid   item xs = {5} style = {{paddingTop: 20}}>
-        <Box display = "flex"
-        justifyContent = "left"
-        alignItems = "center"
-        >
-          <MovieFooter title = {pageNumber}/>
-        </Box>
-      </Grid>
+      
     </Grid>
+    
+    <Grid   item xs = {5} style = {{paddingTop: 20}}>
+    <Box display = "flex"
+    justifyContent = "center"
+    alignItems = "center"
+    >
+      <MovieFooter title = {pageNumber}/>
+    </Box>
+  </Grid>
+  </>
   );
 }
 export default MovieListPageTemplate;

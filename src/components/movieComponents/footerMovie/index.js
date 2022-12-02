@@ -46,7 +46,7 @@ const MovieFooter = (props) => {
         <ArrowRightIcon color="primary" fontSize="large" />
       </IconButton> */}
 
-      <Pagination count={1000} variant="outlined" onChange={(event, page) => setPageNum(page)}></Pagination>
+      <Pagination color="secondary"  count={1000}  onChange={(event, page) => setPageNum(page)}></Pagination>
     </Paper>
   );
 };
