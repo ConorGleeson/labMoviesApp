@@ -42,7 +42,7 @@ e.g.
 
 [ Insert screenshots of the __new app pages__ you developed (including modified existing pages), Have an appropriate caption for each one (see example below).
 
-![ ](./images/login.png)
+![ ](/images/login.png)
 
 >Simple login page to allow users to login and create accounts
 
