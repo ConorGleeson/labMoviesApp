@@ -46,19 +46,19 @@ e.g.
 
 >Simple login page to allow users to login and create accounts
 
-![ ](./images/logedin.png)
+![ ](/images/logedin.png)
 
 >Page after succesfull login with rest of the pages now avalible at the top
 
-![ ](./images/tvshows.png)
+![ ](/images/tvshows.png)
 
 >shows a list of tv shows
 
-![ ](./images/showdetails.png)
+![ ](/images/showdetails.png)
 
 >shows details of a specific movie 
 
-![ ](./images/favouriteshows.png)
+![ ](/images/favouriteshows.png)
 
 >a list of user favourited shows
 
