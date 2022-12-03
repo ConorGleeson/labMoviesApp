@@ -64,12 +64,18 @@ e.g.
 
 ### Routing.
 
-+ /actors - displays a list of popular actors.
-+ /actors/:id - shows details about a particular actor.
-+ /actors/:id/movies (protected) - an actor's movie credits.
-+ etc.
+[ List the __new routes__ supported by your app and state the associated page.]
 
-[If relevant, state what aspects of your app are protected/private (i.e. require authentication) and what is public.]
+e.g. 
+
++ /:pageNum - paginated discover movies route
++ /movies/topRated - Top rated movies
++ /tvshows - discover tv shows
++ /tvshows/:id - tv show details page
++ /tvshows/favourites - favourite tv shows
++ /login - login page
+
+the only avalible route before logging in is the login page
 
 ## Independent learning (If relevant).
 
