@@ -79,4 +79,6 @@ the only avalible route before logging in is the login page
 
 ## Independent learning (If relevant).
 
-[ Itemize the technologies/techniques you researched independently and adopted in your project, i.e. aspects not covered in the lectures/labs. Mention the source code filenames that illustrate these  (code excerpts are not required) and provide references to the online resources that helped you (articles/blogs).
+Firebase third part authenticaiton - https://youtu.be/9bXhf_TELP4
+
+Various new MUI Components - https://mui.com/ 
