@@ -29,10 +29,10 @@ npm install
 
 e.g.
 
-+ /movies/topRated"- Top rated movies
-+ /tvshows - List of TV Shows
-+ /tvshows/:id - TV Show details
-+ /tvshows/favourites - Favourite TV Shows 
++ /movies/toprated"- Top rated movies
++ /tv/toprated - List of TV Shows
++ /tv/{tv_id} - TV Show details
+
 
 ## App Design.
 
@@ -63,10 +63,6 @@ e.g.
 >a list of user favourited shows
 
 ### Routing.
-
-[ List the __new routes__ supported by your app and state the associated page.]
-
-e.g. 
 
 + /actors - displays a list of popular actors.
 + /actors/:id - shows details about a particular actor.
