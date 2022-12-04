@@ -79,6 +79,8 @@ the only avalible route before logging in is the login page
 
 ## Independent learning (If relevant).
 
-Firebase third part authenticaiton - https://youtu.be/9bXhf_TELP4
++ Firebase third part authenticaiton - https://youtu.be/9bXhf_TELP4 https://firebase.google.com/
 
-Various new MUI Components - https://mui.com/ 
++ Various new MUI Components - https://mui.com/ 
+
++ Pagination for tmdb movies https://tmdbapis.metamanager.wiki/en/latest/objs/pagination.html
